@@ -1,9 +1,10 @@
 import re
 from ipaddress import IPv4Address, AddressValueError
 
+
 def is_valid_interface(name: str) -> bool:
-    '''Checks if name follows the pattern of <ge-(0-9)/(0-9)/(0-9)>'''
-    return re.match(r'^ge-\d+/\d+/\d+$', name)
+    """Checks if name follows the pattern of <ge-(0-9)/(0-9)/(0-9)>"""
+    return re.match(r"^ge-\d+/\d+/\d+$", name)
 
 
 def is_valid_mac(mac: str) -> bool:
@@ -14,5 +15,5 @@ def is_valid_ipv4(ip: str) -> bool:
     try:
         IPv4Address(ip)
         return True
-    except (AddressValueError):
+    except AddressValueError:
         return False

@@ -1,4 +1,5 @@
 from netmiko import ConnectHandler
+from netmiko import BaseConnection
 import typer
 
 import core.status as status
@@ -14,7 +15,7 @@ def create_app() -> typer.Typer:
     'username': '',
     'password': '',
     }
-    connection = ConnectHandler(**device)
+    connection: BaseConnection = ConnectHandler(**device)
     app = typer.Typer()
     app.add_typer(status.create_status_app(connection), name="status")
     app.add_typer(speed.create_speed_app(connection), name="speed")
@@ -22,8 +23,7 @@ def create_app() -> typer.Typer:
     app.add_typer(state.create_state_app(connection), name="state")
     app.add_typer(acl.create_acl_app(connection), name="acl")
 
-    return app
-
+    return app()
 
 if __name__ == "__main__":
     app = create_app()
