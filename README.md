@@ -20,8 +20,17 @@ Commands:
 ```
 
 ## Installation
+```console
 pip install nt
+```
 
+or
+
+```console
+git clone https://github.com/Fearkin/netswitcher/tree/master
+
+poetry install
+```
 ## Usage:
 **`nt acl` [action]** - команда для работы с ACL
 
