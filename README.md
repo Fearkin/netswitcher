@@ -1,6 +1,6 @@
 # netswitcher (nt)
 
-```console $ nt --help
+```console
 Usage: nt [OPTIONS] COMMAND [ARGS]...
 
 Options:
